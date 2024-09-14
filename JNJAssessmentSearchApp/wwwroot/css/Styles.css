@@ -1,0 +1,121 @@
+﻿.logo {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    font-size: 20px;
+    color: #D2232A;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-align: center;
+}
+.link-container{
+    display:flex;
+    justify-content:space-between;
+}
+
+.logo span {
+    font-style: italic;
+}
+
+
+.form-group {
+    margin-bottom: 20px; /* Adds spacing between form elements */
+}
+
+.form-control-updated {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    outline: none;
+}
+.form-control-updated:focus {
+    border-color: #D2232A
+}
+
+.submit-btn {
+    margin-top: 20px; /* Adds space above the Submit button */
+
+    border-width: 2px;
+    background: white;
+    width: 600px;
+    font-weight: bold;
+    background-color: #D2232A; /* Primary blue */
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+    .submit-btn:hover {
+        background-color: white; /* Darker blue on hover */
+        color:white;
+        transform: scale(1.01); /* Slight scaling on hover */
+        background-color: lightcoral; /* Primary blue */
+    }
+
+.search-form {
+    max-width: 600px; /* Limits the form width to make it more centered */
+    margin: 0 auto; /* Centers the form horizontally */
+}
+
+.result-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+    padding: 20px;
+    max-width: 600px; /* Limits the form width to make it more centered */
+    background-color: lightcoral;
+    margin: 0 auto; /* Centers the form horizontally */
+    border-radius: 10px;
+}
+
+.person-card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    width:100%;
+}
+
+.person-card:hover {
+        transform: translateY(-5px);
+}
+
+.person-details {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    line-height: 1.6;
+    
+}
+
+.person-details li {
+    margin-bottom: 10px;
+}
+
+.films-section {
+    margin-top: 20px;
+}
+
+.films-list {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+h3 {
+    margin-top: 0;
+    color: #333;
+}
+
+h4 {
+    color: #666;
+}

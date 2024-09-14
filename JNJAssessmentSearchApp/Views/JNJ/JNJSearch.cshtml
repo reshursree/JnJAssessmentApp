@@ -1,0 +1,110 @@
+﻿@model SearchModel
+
+@{
+    ViewData["Title"] = "JNJSearch";
+}
+
+<div class="search-form">
+    <form asp-action="Search" method="get">
+        <div class="form-group">
+            <label for="SearchTerm"><b>Term</b></label>
+            <input placeholder="Input Search Term" type="text" class="form-control-updated" id="SearchTerm" asp-for="Term" required>
+        </div>
+        <div class="form-group">
+            <label for="SearchType"><b>Type</b></label>
+            <select class="form-control-updated" id="SearchType" asp-for="Type" required>
+                <option value="" disabled selected>Select Search Type</option>
+                <option value="id">ID</option>
+                <option value="name">Name</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="submit-btn">Submit</button>
+        </div>
+    </form>
+</div>
+@if (Model != null && Model.Persons != null && Model.Persons.Count > 0)
+
+{
+    <div class="result-container">
+        @foreach (var person in Model.Persons)
+        {
+            <div class="person-card">
+                <h3>@person.Name</h3>
+                <ul class="person-details">
+                    <li><strong>Height:</strong> @person.Height cm</li>
+                    <li><strong>Mass:</strong> @person.Mass kg</li>
+                    <li><strong>Hair Color:</strong> @(!string.IsNullOrEmpty(person.Hair_Color) ? person.Hair_Color : "n/a")</li>
+                    <li><strong>Skin Color:</strong>@(!string.IsNullOrEmpty(person.Skin_Color) ? person.Skin_Color : "n/a")</li>
+                    <li><strong>Eye Color:</strong> @(!string.IsNullOrEmpty(person.Eye_Color) ? person.Eye_Color : "n/a")</li>
+                    <li><strong>Birth Year:</strong> @(!string.IsNullOrEmpty(person.Birth_Year) ? person.Birth_Year : "n/a")</li>
+                    <li><strong>Gender:</strong> @(!string.IsNullOrEmpty(person.Gender) ? person.Gender : "n/a")</li>
+                    <li>
+                        <strong>
+                            Homeworld:
+                        </strong>
+                        @(!string.IsNullOrEmpty(person.Homeworld)
+                     ? Html.Raw($"<a style='text-decoration:none' href='{person.Homeworld}'>{person.Homeworld}</a>")
+                     : "n/a")
+
+                    </li>
+
+                    </ul>
+
+                <div class="films-section">
+                    <h4>Films:</h4>
+                    <ul class="films-list">
+                        @foreach (var film in person.Films)
+                        {
+                            <li >
+                                <a style="text-decoration:none" href=@film>@film</a>
+                            </li>
+                        }
+                    </ul>
+                </div>
+                <div class="species-section">
+                    <h4>Species:</h4>
+                    <ul class="species-list">
+                        @foreach (var spec in person.Species)
+                        {
+                            <li>
+                                <a style="text-decoration:none" href=@spec>@spec</a>
+                            </li>
+                        }
+                    </ul>
+                </div>
+                <div class="vehicles-section">
+                    <h4>Vehicles:</h4>
+                    <ul class="vehicle-list">
+                        @foreach (var vehicle in person.Vehicles)
+                        {
+                            <li>
+                                <a style="text-decoration:none" href=@vehicle>@vehicle</a>
+                            </li>
+                        }
+                    </ul>
+                </div>
+                <div class="starships-section">
+                    <h4>Starships:</h4>
+                    <ul class="starships-list">
+                        @foreach (var star in person.Starships)
+                        {
+                            <li>
+                                <a style="text-decoration:none" href=@star>@star</a>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        }
+    </div>
+}
+else if (Model!=null)
+{
+     <div class="result-container">
+         <p style="color: white; font-weight:bold">
+         No Items Found!
+         </p>
+     </div>
+    
+}
