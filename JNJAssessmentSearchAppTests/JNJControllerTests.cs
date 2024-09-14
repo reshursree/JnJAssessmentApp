@@ -12,11 +12,11 @@ using Xunit;
 
 namespace JNJAssessmentSearchApp
 {
-    public class SearchControllerTests : IClassFixture<WebApplicationFactory<Program>>
+    public class JNJControllerTests : IClassFixture<WebApplicationFactory<Program>>
     {
         private readonly HttpClient _client;
 
-        public SearchControllerTests(WebApplicationFactory<Program> factory)
+        public JNJControllerTests(WebApplicationFactory<Program> factory)
         {
             _client = factory.CreateClient();
         }
